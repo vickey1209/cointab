@@ -1,0 +1,16 @@
+{
+  "name": "cointab",
+  "version": "1.0.0",
+  "description": "task",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/app.js , ejs "
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^6.8.0",
+    "mysql": "^2.18.1"
+  }
+}
