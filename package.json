@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/app.js , ejs "
+    "start": "nodemon src/app.js , -e js,ejs "
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "mongoose": "^6.8.0",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "path": "^0.12.7"
   }
 }
