@@ -39,7 +39,7 @@ for(var i = 0; i< data.length; i++) {%>
 <td><%= data[i].email%></td>
 <td><%= data[i].password%></td>
 <td>
-<a class="btn btn-success edit" href="../customers/edit/<%=data[i].id%>">Edit</a>                       
+<a class="btn btn-success edit" href="edit/<%=data[i].id%>">Edit</a>                       
 <a class="btn btn-danger delete" onclick="return alert('Are You sure?')" href="../customers/delete/<%=data[i].id%>">Delete</a>                       
 </td>
 </tr>

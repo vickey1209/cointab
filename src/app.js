@@ -149,6 +149,50 @@ app.post('/login', function(req, res) {
     });
     });
 
+    app.get("/edit/:id", async (req, res) => {
+        const _id = req.params.id;
+      
+        Register.findById(_id, function (err, result) {
+          if (err) {
+            console.log(err);
+          } else {
+            res.render("edit", { details: result });
+            console.log(result);
+            // res.send(result);
+          }
+        });
+      });
+      
+      app.post("/edit/:id", async (req, res) => {
+        try {
+          const _id = req.params.id;
+          const update = req.body;
+          const result = await Register.findByIdAndUpdate(_id, update);
+          // res.render("display");
+          Register.find({}, function (err, result) {
+            if (err) {
+              console.log(err);
+            } else {
+             // console.log(result);
+              res.render("display", { details: result });
+             // console.log(details.email);
+            }
+          });
+          // Register.findByIdAndUpdate(_id, Register, function (err) {
+          //   if (err) {
+          //     console.log(err);
+          //   } else {
+          //     res.render("index");
+          //     // console.log(result);
+          //     // res.send(result);
+          //   }
+          // });
+        } catch (e) {
+          console.log(e);
+        }
+      });
+
+
     app.get('/edit/(:id)', function(req, res, next){
 db.query('SELECT * FROM register WHERE id = ' + req.params.id, function(err, rows, fields) {
 if(err) throw err
